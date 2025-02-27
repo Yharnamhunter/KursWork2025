@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Interface</title>
+    <link rel="stylesheet" href="search_style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button class="nav-button">About</button>
+        <button class="nav-button">Contacts</button>
+        <div class="menu-icon" onclick="toggleDropdown()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <div class="dropdown-item">Request History</div>
+            <div class="dropdown-item sign-out">Sign Out</div>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="input-wrapper">
+            <textarea class="search-box" placeholder="Ask me anything..." id="searchInput" rows="1"></textarea>
+            <button class="submit-btn" id="submitBtn">
+                
+            </button>
+        </div>
+        <div class="response-box" id="responseBox"></div>
+    </div>
+
+    <div class="modal" id="aboutModal">
+        <p>We are the best site for generating synthetic data designed for training artificial intelligence.</p>
+        <p>Our platform provides high-quality, realistic data that helps optimize AI models and improve their accuracy.</p>
+        <p>We offer innovative solutions for researchers and developers striving for excellence in the field of artificial intelligence.</p>
+    </div>
+
+    <div class="modal" id="contactsModal">
+        <pre>Musin Ildar Rinatovich</pre> 
+        <pre>   Phone: +7 (961) 364-22-33</pre>
+        <pre>   Email: irmusin@edu.hse.ru</pre><br>
+        <pre>Pishchugin Arseniy Sergeevich</pre> 
+        <pre>   Phone: +7 (988) 994-02-62</pre>
+        <pre>   Email: aspishchugin@edu.hse.ru</pre>
+    </div>
+
+    <script src="search_script.js"></script>
+</body>
+</html>

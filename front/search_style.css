@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #333;
+}
+
+.top-bar {
+    background-color: #2a2a2a;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #ff6b00;
+    position: relative;
+}
+
+.nav-button {
+    color: white;
+    background: none;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-button:hover {
+    color: #ff6b00;
+    transform: translateY(-2px);
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 180px;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+    margin: 3px 0;
+}
+
+.dropdown-item.sign-out {
+    background-color: #ff4444;
+    margin-top: 10px;
+}
+
+.dropdown-item.sign-out:hover {
+    background-color: #ff0000;
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.search-box {
+    width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 25px;
+    padding: 15px 25px;
+    color: white;
+    font-size: 16px;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+.response-box {
+    width: 100%;
+    min-height: 100px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #444;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+}
+
+.modal.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { bottom: -100px; }
+    to { bottom: 0; }
+}
+
+.typing-animation {
+    border-right: 2px solid white;
+    animation: typing 1s steps(40) infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 15vh auto 0;
+    padding: 0 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-box {
+    width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 25px;
+    padding: 15px 55px 15px 25px;
+    color: white;
+    font-size: 16px;
+    resize: none;
+    overflow-y: auto;
+    line-height: 1.5;
+}
+
+.search-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-box::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.search-box::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff6b00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 2px;
+    height: 17px;
+    background: white;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #dc6008;
+    
+}
+
+.response-box {
+    margin-top: 40px;
+}
