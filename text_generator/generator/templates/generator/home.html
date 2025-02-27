@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор текста</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Генератор текста</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.topic }}
+            </div>
+            <div class="mb-3">
+                {{ form.language }}
+            </div>
+            <button type="submit" class="btn btn-success">Генерировать текст</button>
+        </form>
+
+        {% if generated_text %}
+            <h3 class="mt-4">Сгенерированный текст:</h3>
+            <p>{{ generated_text }}</p>
+        {% endif %}
+    </div>
+</body>
+<footer class="footer">
+    <div class="container text-center py-3">
+        <p>Проект разработали: Пищугин А.С. и Мусин И.Р.  ВШЭ МИЭМ ИВТ, 2024-2025</p>
+    </div>
+</footer>
+</html>
