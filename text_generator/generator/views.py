@@ -4,7 +4,7 @@ from .forms import TextGenerationForm
 from django.conf import settings
 
 
-
+#функция выведения текста с помощью Django.shortcuts
 def home(request):
     generated_text = None
 
@@ -14,11 +14,12 @@ def home(request):
             topic = form.cleaned_data['topic']
             language = form.cleaned_data['language']
             generated_text = generate_text_on_topic(topic, language)
-            
     else:
         form = TextGenerationForm()
 
     return render(request, 'generator/home.html', {'form': form, 'generated_text': generated_text})
+
+#Функция создания API запроса к Google Gemini и возвращение текстового ответа
 '''
 def generate_text_with_gemini(theme, language):
     API_KEY = settings.GEMINI_API_KEY
@@ -41,6 +42,7 @@ def generate_text_with_gemini(theme, language):
         return f'Error: {response.status_code}. {response.text}'
 '''
 
+#Функция создания API запроса к Yandex GPT и возвращение текстового ответа
 def generate_text_on_topic(topic, language='ru'):
     gpt_id = settings.YANDEX_GPT_ID
     token = settings.YANDEX_API_KEY

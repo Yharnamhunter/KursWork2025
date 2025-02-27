@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#в созданный шаблон добавлен generator
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -116,7 +116,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+#ключи и id для разныъ ИИ
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
 YANDEX_GPT_ID = os.getenv('YANDEX_GPT_ID')
