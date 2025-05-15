@@ -1,0 +1,67 @@
+  {% load static %}
+  <!DOCTYPE html>
+  <html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TextGen{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+    .auth-page .header {
+        display: none;
+    }
+    </style>
+  </head>
+  <body>
+
+  {% if user.is_authenticated %}
+  <header class="header">
+    <div class="header__left">
+      <a href="{% url 'generate' %}"
+        class="nav-btn {% if request.resolver_match.url_name == 'generate' %}nav-btn_active{% endif %}">
+        Одиночная
+      </a>
+      <a href="{% url 'batch_generate' %}"
+        class="nav-btn {% if request.resolver_match.url_name == 'batch_generate' %}nav-btn_active{% endif %}">
+        Пакетная
+      </a>
+    </div>
+
+    <div class="header__right">
+        <a href="{% url 'logout' %}" class="auth-btn">Выйти</a>
+    </div>
+  </header>
+  {% endif %}
+
+  <main class="main-content">
+    {% if messages %}
+      <ul class="messages">
+        {% for msg in messages %}
+          <li class="{{ msg.tags }}">{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const messages = document.querySelectorAll('.messages li');
+
+      messages.forEach(message => {
+          const removeMessage = () => {
+              message.style.animation = 'messageSlideOut 0.5s ease-in forwards';
+              setTimeout(() => {
+                  message.style.marginBottom = '0';
+                  message.style.padding = '0';
+                  message.style.maxHeight = '0';
+                  setTimeout(() => message.remove(), 500);
+              }, 500);
+          };
+
+          setTimeout(removeMessage, 5000);
+          message.addEventListener('click', removeMessage);
+      });
+  });
+  </script>
+  </body>
+  </html>
