@@ -1,6 +1,6 @@
 # Синтетический генератор текстовых данных
 
-![example workflow](https://github.com/Yharnamhunter/KursWork2025/blob/main/.github/workflows/ci-cd.yml/badge.svg)
+![example workflow](https://github.com/Yharnamhunter/KursWork2025/actions/workflows/ci-cd.yml/badge.svg)
 
 Учебный проект для генерации синтетических текстовых данных для обучения моделей искусственного интеллекта.
 Позволяет генерировать одиночные тексты и пакеты текстов в форматах **TXT**, **DOCX** и **RTF**.  
